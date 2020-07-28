@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+    <meta charset="UTF-8">
+    <title>PY的简单搜索</title>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?a39aa3aa8cfb5d02c23c697e97b73f8e";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+
+<style type="text/css">
+#page_num{
+    position: absolute;left: 100px;top: 100px;
+    font-size: 50px;
+    color: rgba(255,255,255,1);
+    
+}
+#yuan{
+    position: absolute;left:85px;top: 90px;
+    width:60px;height:60px;border-radius:50%;background-color:rgb(153, 57, 243,0.9);
+}
+#page_title{
+    font-size: 50px;
+    position: absolute;left: 800px;top: 10px;
+}
+
+.docu_list{
+    position: absolute;left:500px;top:200px;
+    width:600px;height:350px;
+    }
+</style>
+
+<script>
+    window.onload=function()
+    {
+        document.onkeydown=function()
+        {
+            var keyNum=event.keyCode;
+            if(keyNum==40||keyNum==39)//左 下键 
+            {
+                location.href="index.html";                
+            }else  if(keyNum==37||keyNum==38)//上 右键
+            {
+                location.href="index2.html";                
+            }
+           
+        }
+      
+    }
+</script>
+
+<body  onmousewheel=mouswheel(event) background="https://pic1.zhimg.com/v2-3c8571b86385ed945635db9eecd5c934_r.jpg">
+    <div>
+        <p id="yuan"></p>
+        <div id="page_num">3</div>
+        <div >
+            <p id="page_title">AboutMe</p>  
+                   
+        </div>
+        <div class="docu_list">
+            <p>hellopy含义</p>
+            <ul>
+                <li>中文含义：你好PY,方便记忆</li>
+                <li>编程开始于“hello world”</li>
+                <li>我的名字：hellopy</li>
+                <li>我的地址：hellopy.github.io</li>
+            </ul>
+            <p>温馨提示</p>
+            <ul>
+                <li>分辨率推荐1920*1080，否则会出现元素位置错位</li>
+                <li>可以将“ https://hellopy.github.io/ ”设为主页，方便下次访问</li>
+                
+            </ul>
+            <p>文档：</p>
+            <ul>
+                <li> <a href="op.html">操作技巧</a> </li>
+                <li> <a href="version.html">更新说明</a></li>
+                <li> <a href="thanks.html">感谢</a> </li>
+            </ul>
+            <p>问题</p>
+            <ul>
+                <li>联系：zhabc0@qq.com</li>
+                                
+            </ul>
+        </div>
+        
+    </div>
+</body>
+
+</html>
