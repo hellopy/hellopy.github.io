@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <title>PY的简单搜索</title>
-    <!-- tong -->
     <script>
         var _hmt = _hmt || [];
         (function() {
@@ -16,71 +15,103 @@
     </script>
 </head>
 <style type="text/css">
-#page{
-    position: absolute;left: 100px;top: 100px;
-    font-size: 50px;
-    color: rgba(255,255,255,1);
-    
+.body_pc{
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    background-image:url('https://pic3.zhimg.com/v2-e27b6692c148f856de9ff7da8a23c046_r.jpg');
 }
-#yuan{
-    position: absolute;left:85px;top: 90px;
-    width:60px;height:60px;border-radius:50%;background-color:rgb(153, 57, 243,0.9);
+.body_mob{
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    background-image:url('https://pic1.zhimg.com/v2-29f166daae3336b13da3ed53fe69d30e_r.jpg?source=1940ef5c');
+}
+
+.page_num{
+    margin-top: 100px;
+    margin-left: 100px;
+    width: 60px;
+    font-size: 50px;
+    text-align: center;
+    color: rgb(252, 244, 244);
+    border:1px solid #f2f1f5;background-color:rgb(153, 57, 243);
+    border-radius:30px;
+}
+
+
+.content{
+   margin-top: 100px;
+}
+.div_input{
+    width:800px;
+    margin: 0px auto;
 }
 input {outline:none;}
-.input1{
-        width:675px; height:36px;
+.input_default{ 
+        width:675px; height:36px;   
         text-indent: 15px;font-size:20px; 
         border:1px solid #d2d2d6;border-radius: 6px;
         background: rgb(226, 226, 221);
-        
         }
-.input1:hover{
-        width:675px; height:36px;
-        text-indent: 15px;font-size:20px; 
-        border:1px solid #6c63ec;border-radius: 6px;
-        background: rgb(236, 236, 233);
-        
+.input_default:hover{
+        border:1px solid #8780f5;border-radius: 6px;        
         }     
       
-.input1_2{
-        width:675px; height:36px;
+.input_focus{
+        width:675px; height:36px;   
+        margin: 0px auto;
         text-indent: 15px;font-size:20px; 
-        border:1px solid #3239fa;border-radius: 6px;
-        background: rgb(236, 236, 233);
+        border:1px solid #2f36ec;border-radius: 6px;
+        background: rgb(226, 226, 221);
         }
+
+.div_anniu{
+    width:800px;
+    margin-left: auto;margin-right: auto;
+    margin-top: 10px;
+}
+.anniu_all{
+    width: 88px;
+    padding: 2px;
+    font-size:20px;text-align: center;
+    border-radius:7.5px; border:2px solid #fbfafc;
+    margin: 8px;
+}
+.anniu_all:hover{border:2px solid #3c2ef8;}
 #anniu1{
-    width: 100px; height:28px; border-radius:7.5px; font-size:15px; border:2px solid #fbfafc; background: rgb(156, 221, 247);
+   background: rgb(156, 221, 247);
 }
-#anniu1:hover{border:2px solid #3c2ef8;}
 #anniu2{
-    width: 100px; height:28px; border-radius:7.5px; font-size:15px; border:2px solid #fbfafc; background: rgb(68, 143, 93)
+     background: rgb(68, 143, 93)
 }
-#anniu2:hover{border:2px solid #3c2ef8;}
+
 #anniu3{
-    width: 100px; height:28px; border-radius:7.5px; font-size:15px; border:2px solid #fbfafc; background: rgb(137, 240, 117)
+    background: rgb(137, 240, 117)
 }
-#anniu3:hover{border:2px solid #3c2ef8;}
 #anniu4{
-    width: 100px; height:28px; border-radius:7.5px; font-size:15px; border:2px solid #fbfafc; background: rgb(69, 113, 235)
+    background: rgb(69, 113, 235)
 }
-#anniu4:hover{border:2px solid #3c2ef8;}
 #anniu5{
-    width: 100px; height:28px; border-radius:7.5px; font-size:15px; border:2px solid #fbfafc; background: rgb(209, 85, 147)
+     background: rgb(209, 85, 147)
 }
-#anniu5:hover{border:2px solid #3c2ef8;}
 #anniu6{
-    width: 100px; height:28px; border-radius:7.5px; font-size:15px; border:2px solid #fbfafc;color: #fbfafc; background: #24292e
+    color: #fbfafc; background: #24292e
 }
-#anniu6:hover{border:2px solid #3c2ef8;}
 
 #caidan{
-    position: absolute;left:1700px;top: 800px;
+    width:190px;
+    margin: 0px;
+    padding: 3px;
+    border:1px solid #f5f5f7;border-radius:4px;
+    background-color:rgb(240, 121, 43);
     font-size: 20px;
-    color: beige;
-    width:185px;height:30px;border-radius:8px;background-color:rgb(240, 121, 43);
     text-align: center;
+    color: beige;
+    
 }
 </style>
+
 <script>
     function fun_key(way) {
         key_word=document.getElementById("textid").value;
@@ -94,16 +125,18 @@ input {outline:none;}
     {
                 window.open("https://github.com/search?p=3&q="+document.getElementById("textid").value+"&type=Repositories");
     }
-    function mousedo()
+    function mousedo()//鼠标点击输入框
     {
-       document.getElementById("textid").value="";
+       var  input1=document.getElementById("textid"); 
+       input1.value="";
+       input1.className="input_focus"
     }
        
-    function mouseout()
+    function mouseout()//鼠标外出输入框
     {
 
         var input1=document.getElementById("textid");
-        input1.className="input1";
+        input1.className="input_default";
     }
     function enter_key() 
             {
@@ -114,10 +147,10 @@ input {outline:none;}
         document.onkeydown=function()
         {
             var keyNum=event.keyCode;
-            if(keyNum==13)//回车
+            if(keyNum==13)//回车 集中
             {
                 var input1=document.getElementById("textid");
-                input1.className="input1_2";
+                input1.className="input_focus";
                 input1.focus();
                 
             }else  if(keyNum==40||keyNum==39)//左 下键 
@@ -156,26 +189,35 @@ input {outline:none;}
     }
 </script>
 
-<body  background="https://pic3.zhimg.com/v2-e27b6692c148f856de9ff7da8a23c046_r.jpg">
+<body>
+    <script>//判断pc
+        if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios|iOS|iPad|Backerry|WebOS|Symbian|Windows Phone|Phone)/i))) {
+            document.body.className="body_mob"
+        }else{
+            document.body.className="body_pc"
+        }
+    </script>
 <!--本地图片//G:/Pictures/海.jpg    网络图片HTTP开头--> 
-    <p id="yuan"></p>
-    <div id="page">1</div>
-    <div id="div1" style="position: absolute;left: 570px;top: 310px;"><input id="textid" type="text" onmouseout=mouseout() onmousedown=mousedo() onkeydown=inpt_keydown() class="input1" ></div>
+    <div id="caidan">按方向键，有彩蛋</div>    
+    <div class="page_num">1</div>
    
-    <div  style="position: absolute;left: 580px;top: 370px;">    
-        <b>
-                <input id="anniu1" type="button" value="百度" onclick=fun_key("百度") > &nbsp;
-                <input id="anniu4" type="button" value="知乎" onclick=fun_key("知乎") >&nbsp;
-                <input id="anniu5" type="button" value="B站" onclick=fun_key("B站") >&nbsp;
-                <input id="anniu6" type="button" value="GitHub" onclick=Search_GitHub() > &nbsp;
-                <input id="anniu2" type="button" value="Bing国际版" onclick=fun_key("bing")> &nbsp;
-                <input id="anniu3" type="button" value="谷歌" onclick=fun_key("谷歌") > &nbsp;
-       
+    <div class="content">
+        <div class="div_input">
+            <input id="textid" type="text" class="input_default" onmouseout=mouseout() onmousedown=mousedo() onkeydown=inpt_keydown() >
+        </div>
+        <div class="div_anniu">    
+            <b>
+                    <input id="anniu1" type="button" value="百度" class="anniu_all" onclick=fun_key("百度") > &nbsp;
+                    <input id="anniu4" type="button" value="知乎" class="anniu_all" onclick=fun_key("知乎") >&nbsp;
+                    <input id="anniu5" type="button" value="B站" class="anniu_all" onclick=fun_key("B站") >&nbsp;
+                    <input id="anniu6" type="button" value="GitHub" class="anniu_all" onclick=Search_GitHub() > &nbsp;
+                    <input id="anniu2" type="button" value="Bing国际版" class="anniu_all" onclick=fun_key("bing")> &nbsp;
+                    <input id="anniu3" type="button" value="谷歌"  class="anniu_all" onclick=fun_key("谷歌") > &nbsp;
+        
             </b>
+        </div>
     </div>
-    <div>
-        <div id="caidan">按方向键，有彩蛋</div>
-    </div>
+   
 </body>
 
 </html>
