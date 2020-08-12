@@ -14,36 +14,55 @@
         })();
     </script>
 </head>
-
 <style type="text/css">
-#page_num{
-    position: absolute;left: 100px;top: 100px;
-    font-size: 50px;
-    color: rgba(255,255,255,1);
-    
-}
-#yuan{
-    position: absolute;left:85px;top: 90px;
-    width:60px;height:60px;border-radius:50%;background-color:rgb(153, 57, 243,0.9);
-}
-#page_title{
-    font-size: 50px;
-    position: absolute;left: 800px;top: 10px;
+body{
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
 }
 
-.docu_list{
-    position: absolute;left:500px;top:200px;
-    width:600px;height:350px;
-    }
+.page_title{
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 50px;
+    text-align: center;
+}
+.content{
+    width: 100%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.conten_number{
+    width:200px;height:300px;border-radius: 6px;
+    background-color:rgb(226, 224, 230);
+    float:left;
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.conten-title{
+    margin-top: 5px;
+    font-size: 25px;
+}
+.conten-c{
+    margin-top: 50px;
+}
+.conten-ps{
+    margin-top: 50px;
+}
+
 </style>
-
 <script>
     window.onload=function()
     {
         document.onkeydown=function()
         {
             var keyNum=event.keyCode;
-            if(keyNum==40||keyNum==39)//左 下键 
+           if(keyNum==40||keyNum==39)//左 下键 
             {
                 location.href="index.html";                
             }else  if(keyNum==37||keyNum==38)//上 右键
@@ -56,41 +75,88 @@
     }
 </script>
 
-<body  onmousewheel=mouswheel(event) background="https://pic1.zhimg.com/v2-3c8571b86385ed945635db9eecd5c934_r.jpg">
+
+<body  background="https://pic3.zhimg.com/v2-342f6217465357b011193e6e5f714b29_r.jpg">
     <div>
-        <p id="yuan"></p>
-        <div id="page_num">3</div>
-        <div >
-            <p id="page_title">AboutMe</p>  
-                   
+        <a href="README.html" target="_blank" style="font-size: large;">AboutMe</a>
+    </div>
+    <div>
+        <div class="page_title">网站推荐</div>       
+        <div class="content">
+            <div class="conten_number"> 
+                <div class="conten-title">今日热榜</div>
+                <div class="conten-c">
+                    <a  href="https://tophub.today" target="_blank" >
+                        <img src="https://file.ipadown.com/tophub/assets/images/logo.png" width="50" height="50">
+                        <div>今日热榜</div>
+                    </a>
+                </div>
+                <div class="conten-ps">热搜聚合，微博、微信公众号、知乎</div>  
+            </div>
+            <div class="conten_number"> 
+                <div class="conten-title">怀旧小游戏</div>
+                <div class="conten-c">
+                    <a href="https://www.yikm.net/" target="_blank" >
+                        <img src="https://www.yikm.net/logo.png" width="50" height="50">
+                        <div>小游戏</div>
+                    </a>
+                </div>               
+                <div class="conten-ps">坦克大战、超级马里奥、魂斗罗...</div>  
+            </div>
+            <div class="conten_number"> 
+                <div class="conten-title">工具集合</div>
+                <div class="conten-c">
+                    <a href="https://www.toolnb.com/" target="_blank" >
+                       <img src="https://www.toolnb.com/Public/logo.png" width="200" height="50" >
+                       <div> 爱资料在线工具集合</div>
+                    </a>
+                </div>
+                <div class="conten-ps">在线抠图、二维码生成器、pdf转换、时间戳转换、开发工具、站长工具...</div>  
+            </div>
+            <div class="conten_number"> 
+                <div class="conten-title">知微事见</div>
+                <div class="conten-c">
+                    <a href="https://ef.zhiweidata.com/" target="_blank" >
+                       <img src="data:image/png;base64,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" width="150" height="50" >
+                        <div>热点事件热度查询</div>
+                    </a>
+                </div>
+                <div class="conten-ps">近期舆论场热度走势、近30天热点事件、事件库、对比事件...</div> 
+            </div>
+            <div class="conten_number"> 
+                <div class="conten-title">全历史</div>
+                <div class="conten-c">
+                    <a href="https://www.allhistory.com/" target="_blank" >
+                       <img src="https://www.allhistory.com/online/common/img/logo-ah.1598.svg" width="50" height="50" >
+                       <div>全历史</div>                        
+                    </a>
+                </div>
+                <div class="conten-ps">历史人物关系图谱、关系图谱、时间地图浏览、聚类搜索...</div> 
+            </div>
+            
+            <div class="conten_number"> 
+                <div class="conten-title">阿虚同学的储物间</div>
+                <div class="conten-c">
+                    <a href="https://www.allhistory.com/" target="_blank" >
+                       <img src="" width="50" height="50" >
+                       <div> 阿虚同学的储物间</div>                      
+                    </a>
+                </div>
+                <div class="conten-ps">知乎有名的阿虚同学、找软件、找资源必备...</div> 
+            </div>
+            <div class="conten_number"> 
+                <div class="conten-title">鸠摩文档搜索</div>
+                <div class="conten-c">
+                    <a href="https://www.jiumodiary.com/" target="_blank" >
+                       <img src="https://www5.jiumodiary.com/images/front/eleps.png" width="100" height="50" >
+                        <div> Jiumo Search 鸠摩搜索 - 文档搜索引擎</div>
+                    </a>
+                </div>
+                <div class="conten-ps">搜电子书、文档...</div> 
+            </div>
+
         </div>
-        <div class="docu_list">
-            <p>hellopy含义</p>
-            <ul>
-                <li>中文含义：你好PY,方便记忆</li>
-                <li>编程开始于“hello world”</li>
-                <li>我的名字：hellopy</li>
-                <li>我的地址：hellopy.github.io</li>
-            </ul>
-            <p>温馨提示</p>
-            <ul>
-                <li>分辨率推荐1920*1080，否则会出现元素位置错位</li>
-                <li>可以将“ https://hellopy.github.io/ ”设为主页，方便下次访问</li>
-                
-            </ul>
-            <p>文档：</p>
-            <ul>
-                <li> <a href="op.html">操作技巧</a> </li>
-                <li> <a href="version.html">更新说明</a></li>
-                <li> <a href="thanks.html">感谢</a> </li>
-            </ul>
-            <p>问题</p>
-            <ul>
-                <li>联系：zhabc0@qq.com</li>
-                                
-            </ul>
-        </div>
-        
+
     </div>
 </body>
 

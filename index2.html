@@ -15,67 +15,212 @@
     </script>
 </head>
 <style type="text/css">
-#page_num{
-    position: absolute;left: 100px;top: 100px;
-    font-size: 50px;
-    color: rgba(255,255,255,1);
+.body_pc{
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    background-image:url('https://pic4.zhimg.com/v2-95dae46a13b97081dde4f462f4dd694d_r.jpg?source=1940ef5c');
+}
+.body_mob{
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    background-image:url('https://pic3.zhimg.com/v2-8320ef9f57529b9b04b40b90c82a5a6a_r.jpg');
+}
+
+.menu{
+   margin-top: 5px;
+}
+.div_input{
+    width:800px;
+    margin: 0px auto;
+}
+input {outline:none;}
+.input_default{ 
+        width:500px; height:20px;   
+        text-indent: 15px;font-size:20px; 
+        border:1px solid #d2d2d6;border-radius: 6px;
+        background: rgb(226, 226, 221);
+        }
+.input_default:hover{
+        border:1px solid #8780f5;border-radius: 6px;        
+        }     
+      
+.input_focus{
+        width:500px; height:20px;    
+        margin: 0px auto;
+        text-indent: 15px;font-size:20px; 
+        border:1px solid #2f36ec;border-radius: 6px;
+        background: rgb(226, 226, 221);
+        }
+
+.div_anniu{
+    width:1080px;
+    margin-left: auto;margin-right: auto;
+    margin-top: 5px;
+}
+.anniu_all{
+    width: 75px;
+    padding: 1px;
+    font-size:15px;text-align: center;
+    border-radius:5px; border:1px solid #fbfafc;
+    margin: 2px;
+}
+.anniu_all:hover{border:1px solid #3c2ef8;}
+#anniu1{
+   background: rgb(156, 221, 247);
+}
+#anniu2{
+     background: rgb(68, 143, 93)
+}
+
+#anniu3{
+    background: rgb(137, 240, 117)
+}
+#anniu4{
+    background: rgb(69, 113, 235)
+}
+#anniu5{
+     background: rgb(209, 85, 147)
+}
+#anniu6{
+    color: #fbfafc; background: #444749
+}
+
+#caidan{
+    width:190px;
+    margin: 0px;
+    padding: 3px;
+    border:1px solid #f5f5f7;border-radius:4px;
+    background-color:rgb(240, 121, 43);
+    font-size: 20px;
+    text-align: center;
+    color: beige;
     
 }
-#yuan{
-    position: absolute;left:85px;top: 90px;
-    width:60px;height:60px;border-radius:50%;background-color:rgb(153, 57, 243,0.9);
+</style>
+<style>/*ifarme_div-ifram 样式  */
+.ifarme_div_default{
+   
+    
+    display: none;
 }
-#page_title{
-    font-size: 50px;
-    position: absolute;left: 800px;top: 10px;
+.ifarme_div_show{
+    width: 100%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
-#conten-1{
-    align-content: center;
-    position: absolute;left:400px;top: 200px;
-    width:200px;height:300px;border-radius: 6px;
-    background-color:rgb(253, 250, 250);
-
-}
-#conten-2{
-    align-content: center;
-    position: absolute;left:800px;top: 200px;
-    width:200px;height:300px;border-radius: 6px;
-    background-color:rgb(253, 250, 250);
-
-}
-#conten-3{
-    align-content: center;
-    position: absolute;left:1200px;top: 200px;
-    width:200px;height:300px;border-radius: 6px;
-    background-color:rgb(253, 250, 250);
-
-}
-.conten-title{
-    position: relative;
-    top: 5%;
-    font-size: 25px;
-    text-align: center;
-
-}
-.conten-c{
-    position: relative;
-    top: 30%;
-    text-align: center;
-}
-.conten-ps{
-    position: relative;
-    top: 50%;
-    text-align: center;
+.ifram{    
+    width: 100%;
+    height: 1000px;
+    padding-top: 2px;
 }
 
 </style>
-<script>
+<script>//搜索方式
+ function Search_BaiDu()
+    {
+        var ifarme= document.getElementById("iframe1");
+        ifarme.src="https://www.baidu.com/s?ie=UTF-8&wd="+document.getElementById("textid").value
+        document.getElementById("ifarme_div").className="ifarme_div_show";
+    }
+    function Search_Bilibili()
+    {
+        var ifarme= document.getElementById("iframe1");
+        ifarme.src="https://search.bilibili.com/all?keyword=" +document.getElementById("textid").value+ "&from_source=banner_search"
+        document.getElementById("ifarme_div").className="ifarme_div_show";
+    }
+    function Search_LianHe()
+    {
+        var ifarme= document.getElementById("iframe1");
+        ifarme.src="https://www.gobaidugle.com/search?keyword="+document.getElementById("textid").value+"&one=baidu&two=google&three=sogou&four=so&num=10&sou=1"
+        document.getElementById("ifarme_div").className="ifarme_div_show";
+    }
+    function Search_Bing()
+    {
+        var ifarme= document.getElementById("iframe1");
+        ifarme.src="https://cn.bing.com/search?q=" +document.getElementById("textid").value+ "&qs=n&FORM=BESBTB&sp=-1&pq=&sc=0-0&sk=&cvid=D4344541005214407A3E5624649B01D92&ensearch=1"
+        document.getElementById("ifarme_div").className="ifarme_div_show";
+    }
+    function Search_ZhiHu()
+    {
+        var ifarme= document.getElementById("iframe1");
+        ifarme.src="https://www.sogou.com/sogou?pid=sogou-wsse-ff111e4a5406ed40&insite=zhihu.com&query="+document.getElementById("textid").value
+        document.getElementById("ifarme_div").className="ifarme_div_show";
+    }
+    function Search_MiJi()//秘迹的click函数重写
+    {
+        //window.open("https://github.com/search?p=3&q="+document.getElementById("textid").value+"&type=Repositories");
+        var ifarme= document.getElementById("iframe1");
+        ifarme.src="https://mijisou.com/?q="+document.getElementById("textid").value+"&category_general=on&time_range=&language=zh-CN&pageno=1"
+        document.getElementById("ifarme_div").className="ifarme_div_show";
+    }
+    function Search_SouGou()
+    {
+        var ifarme= document.getElementById("iframe1");
+        ifarme.src="https://www.sogou.com/web?query="+document.getElementById("textid").value
+        document.getElementById("ifarme_div").className="ifarme_div_show";
+    }
+    function Search_WXacount()
+    {
+        var ifarme= document.getElementById("iframe1");
+        ifarme.src="https://weixin.sogou.com/weixin?type=1&query="+document.getElementById("textid").value
+        document.getElementById("ifarme_div").className="ifarme_div_show";       
+    }
+    function Search_WXarticle()
+    {
+        var ifarme= document.getElementById("iframe1");
+        ifarme.src="https://weixin.sogou.com/weixin?type=2&query="+document.getElementById("textid").value
+        document.getElementById("ifarme_div").className="ifarme_div_show";
+    }
+    function Search_GoogleT_En()
+    {
+                window.open("https://translate.google.cn/#view=home&op=translate&sl=auto&tl=en&text="+document.getElementById("textid").value);
+    }
+    function Search_GoogleT_Cn()
+    {
+                window.open("https://translate.google.cn/#view=home&op=translate&sl=auto&tl=zh-CN&text="+document.getElementById("textid").value);
+    }
+    function Search_YDtrans()
+    {
+        var ifarme= document.getElementById("iframe1");
+        ifarme.src="http://fanyi.youdao.com"
+        document.getElementById("ifarme_div").className="ifarme_div_show";
+    }
+</script>
+
+<script>    
+    function mousedo()//鼠标点击输入框
+    {
+       var  input1=document.getElementById("textid"); 
+       //input1.value="";
+       input1.className="input_focus"
+    }
+       
+    function mouseout()//鼠标外出输入框
+    {
+
+        var input1=document.getElementById("textid");
+        input1.className="input_default";
+    }
+    function enter_key() 
+            {
+                Search_BaiDu()
+            }
     window.onload=function()
     {
         document.onkeydown=function()
         {
             var keyNum=event.keyCode;
-           if(keyNum==40||keyNum==39)//左 下键 
+            if(keyNum==13)//回车 集中
+            {
+                var input1=document.getElementById("textid");
+                input1.className="input_focus";
+                input1.focus();
+                
+            }else  if(keyNum==40||keyNum==39)//左 下键 
             {
                 location.href="index3.html";                
             }else  if(keyNum==37||keyNum==38)//上 右键
@@ -86,49 +231,76 @@
         }
       
     }
-</script>
+    function inpt_keydown()
+    {
+        if(window.event.keyCode==66&&event.altKey)
+        {
+            Search_Bilibili()
+        }else if(window.event.keyCode==90&&event.altKey)
+        {
+            Search_ZhiHu()
+        }
+        else if(window.event.keyCode==67&&event.altKey)
+        {
+            document.getElementById("textid").value="";
+        }
+        else if(window.event.keyCode==13)
+        {
+            Search_BaiDu()
+        }else if(window.event.keyCode==71&&event.altKey)//g
+        {
+            Search_GitHub();
+        }else if(window.event.keyCode==83&&event.altKey)//s
+        {
+            Search_SouGou()
+        }else if(window.event.keyCode==87&&event.altKey)//w
+        {
+            Search_WXarticle()
+        }
 
-
-<body  onmousewheel=mouswheel(event) background="https://pic3.zhimg.com/v2-342f6217465357b011193e6e5f714b29_r.jpg">
-    <div>
-        <p id="yuan"></p>
-        <div id="page_num">2</div>
-        <div >
-            <p id="page_title">今天的推荐</p> 
-            <div>建设中ing,初步规划推荐<好用的网站、工具></div>
-        </div>
-        <div id="conten-1">
-            <div class="conten-title">今日热榜</div>
-            <div class="conten-c">
-                <a href="https://tophub.today" target="_blank" >
-                    <img src="https://file.ipadown.com/tophub/assets/images/logo.png" width="50" height="50">
-                    今日热榜
-                </a>
-            </div>
-            <div class="conten-ps">本来打算自己做热搜聚合，发现这个网站之后，就用现成的</div>  
-        </div>
-        <div id="conten-2">
-            <div class="conten-title">怀旧小游戏</div>
-            <div class="conten-c">
-                <a href="https://www.yikm.net/" target="_blank" >
-                    <img src="https://www.yikm.net/logo.png" width="50" height="50">
-                    小游戏
-                </a>
-            </div>
-            <div class="conten-ps">坦克大战、超级马里奥、魂斗罗...</div>  
-        </div>
-        <div id="conten-3">
-            <div class="conten-title">小工具集合</div>
-            <div class="conten-c">
-                <a href="https://www.toolnb.com/" target="_blank" >
-                    <!-- <img src="https://www.toolnb.com/Public/logo.png" > -->
-                    爱资料在线工具-好用的在线工具箱
-                </a>
-            </div>
-            <div class="conten-ps">在线抠图、二维码生成器、pdf转换...</div>  
-        </div>
         
+    }
+</script>
+<script>//iframe 关闭
+    function Dis_ifra()
+    {
+        document.getElementById("ifarme_div").className="ifarme_div_default";
+    }
+</script>
+<body>
+    <script>//判断pc
+        if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios|iOS|iPad|Backerry|WebOS|Symbian|Windows Phone|Phone)/i))) {
+            document.body.className="body_mob"
+        }else{
+            document.body.className="body_pc"
+        }
+    </script>
+  
+    <div class="menu">
+        <div class="div_input">
+            <input id="textid" type="text" class="input_default" onmouseout=mouseout() onmousedown=mousedo() onkeydown=inpt_keydown() >
+            <input type="button" value="关闭" class="anniu_all" onclick=Dis_ifra() style="font-size: medium; color: #252531; background-color: rgb(64, 230, 202);"> 
+        </div>
+        <div class="div_anniu">    
+            <input id="anniu1" type="button" value="百度" class="anniu_all" onclick=Search_BaiDu()> 
+            <input id="anniu4" type="button" value="知乎-搜狗" class="anniu_all" onclick=Search_ZhiHu()>
+            <input id="anniu5" type="button" value="B站" class="anniu_all" onclick=Search_Bilibili()>
+            <input id="anniu6" type="button" value="秘迹" class="anniu_all" onclick=Search_MiJi() >
+            <input id="anniu2" type="button" value="Bing国际" class="anniu_all" onclick=Search_Bing()>
+            <input type="button" value="联合"  class="anniu_all" onclick=Search_LianHe() style="background-color: rgb(72, 72, 73);color: rgb(241, 126, 85);">                
+            <input type="button" value="搜狗" class="anniu_all" onclick=Search_SouGou() style="background-color: coral;"> 
+            <input type="button" value="公众号文" class="anniu_all" onclick=Search_WXarticle() style="background-color: rgb(5, 143, 35);">
+            <input type="button" value="公众号" class="anniu_all" onclick=Search_WXacount() style="background-color: rgb(58, 139, 76);">         
+            <input type="button" value="英->中" class="anniu_all" onclick=Search_GoogleT_Cn() style="background-color: #1A73EB;">
+            <input type="button" value="中->英" class="anniu_all" onclick=Search_GoogleT_En() style="background-color: #4e95f1;">
+            <input type="button" value="有道翻译" class="anniu_all" onclick=Search_YDtrans() style="background-color: #e02433;">
+        
+        </div>
     </div>
+    <div id="ifarme_div" class="ifarme_div_default">
+        <iframe id="iframe1"  frameborder="0" class="ifram"></iframe>
+    </div>
+   <div></div>
 </body>
 
 </html>

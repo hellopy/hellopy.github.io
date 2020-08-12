@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html >
-
 <head>
     <meta charset="UTF-8">
     <title>PY的简单搜索</title>
-    <!-- <script>
+    <script>
         var _hmt = _hmt || [];
         (function() {
           var hm = document.createElement("script");
@@ -12,7 +11,7 @@
           var s = document.getElementsByTagName("script")[0]; 
           s.parentNode.insertBefore(hm, s);
         })();
-    </script> -->
+    </script>
 </head>
 <style type="text/css">
 .body_pc{
@@ -28,20 +27,8 @@
     background-image:url('https://pic1.zhimg.com/v2-29f166daae3336b13da3ed53fe69d30e_r.jpg?source=1940ef5c');
 }
 
-.page_num{
-    margin-top: 100px;
-    margin-left: 100px;
-    width: 60px;
-    font-size: 50px;
-    text-align: center;
-    color: rgb(252, 244, 244);
-    border:1px solid #f2f1f5;background-color:rgb(153, 57, 243);
-    border-radius:30px;
-}
-
-
 .content{
-   margin-top: 100px;
+   margin-top: 250px;
 }
 .div_input{
     width:800px;
@@ -49,7 +36,9 @@
 }
 input {outline:none;}
 .input_default{ 
-        width:675px; height:36px;   
+        width:675px; height:36px;
+        margin-left: auto;
+        margin-right: auto; 
         text-indent: 15px;font-size:20px; 
         border:1px solid #d2d2d6;border-radius: 6px;
         background: rgb(226, 226, 221);
@@ -65,6 +54,23 @@ input {outline:none;}
         border:1px solid #2f36ec;border-radius: 6px;
         background: rgb(226, 226, 221);
         }
+
+.ul_sw{
+    list-style-type:none;
+    width:675px;
+    margin-top: 0px;
+    text-indent: 15px;font-size:15px; 
+    border:1px solid #8780f5;border-radius: 6px;
+    background: rgb(226, 226, 221);
+    padding: 0px;
+}
+.li_sw{
+    height: 30px;
+}
+.li_sw:hover{
+    color: #181bf3;
+    cursor:pointer
+}
 
 .div_anniu{
     width:800px;
@@ -111,25 +117,61 @@ input {outline:none;}
     
 }
 </style>
-
-<script>
-    function fun_key(way) {
-        key_word=document.getElementById("textid").value;
-        if (way == "百度") window.open("https://www.baidu.com/s?ie=UTF-8&wd="+ key_word);
-        if (way == "谷歌") window.open("https://www.google.com/search?newwindow=1&safe=strict&hl=zh-CN&gbv=2&q=" + key_word);
-        if (way == "bing") window.open("https://cn.bing.com/search?q=" + key_word + "&qs=n&FORM=BESBTB&sp=-1&pq=&sc=0-0&sk=&cvid=D4344541005214407A3E5624649B01D92&ensearch=1");
-        if (way == "知乎") window.open("https://www.zhihu.com/search?type=content&q=" + key_word);
-        if (way == "B站") window.open("https://search.bilibili.com/all?keyword=" + key_word + "&from_source=banner_search");
-    } 
+<script>//搜索方式
+    function Search_BaiDu()
+    {
+        window.open("https://www.baidu.com/s?ie=UTF-8&wd="+document.getElementById("textid").value);
+    }
+    function Search_Bilibili()
+    {
+        window.open("https://search.bilibili.com/all?keyword=" +document.getElementById("textid").value+ "&from_source=banner_search");
+    }
+    function Search_Google()
+    {
+        window.open("https://www.google.com/search?newwindow=1&safe=strict&hl=zh-CN&gbv=2&q="+document.getElementById("textid").value);
+    }
+    function Search_Bing()
+    {
+        window.open("https://cn.bing.com/search?q=" +document.getElementById("textid").value+ "&qs=n&FORM=BESBTB&sp=-1&pq=&sc=0-0&sk=&cvid=D4344541005214407A3E5624649B01D92&ensearch=1");
+    }
+    function Search_ZhiHu()
+    {
+        window.open("https://www.zhihu.com/search?type=content&q="+document.getElementById("textid").value);
+    }
     function Search_GitHub()//github的click函数重写
     {
                 window.open("https://github.com/search?p=3&q="+document.getElementById("textid").value+"&type=Repositories");
     }
+    function Search_SouGou()
+    {
+                window.open("https://www.sogou.com/web?query="+document.getElementById("textid").value);
+    }
+    function Search_WXacount()
+    {
+                window.open("https://weixin.sogou.com/weixin?type=1&query="+document.getElementById("textid").value);
+    }
+    function Search_WXarticle()
+    {
+                window.open("https://weixin.sogou.com/weixin?type=2&query="+document.getElementById("textid").value);
+    }
+    function Search_GoogleT_En()
+    {
+                window.open("https://translate.google.cn/#view=home&op=translate&sl=auto&tl=en&text="+document.getElementById("textid").value);
+    }
+    function Search_GoogleT_Cn()
+    {
+                window.open("https://translate.google.cn/#view=home&op=translate&sl=auto&tl=zh-CN&text="+document.getElementById("textid").value);
+    }
+    function Search_YDtrans()
+    {
+                window.open("http://fanyi.youdao.com");
+    }
+</script>
+
+<script>//快捷键 鼠标
     function mousedo()//鼠标点击输入框
     {
-       var  input1=document.getElementById("textid"); 
-       input1.value="";
-       input1.className="input_focus"
+       document.getElementById("textid").className="input_focus";
     }
        
     function mouseout()//鼠标外出输入框
@@ -140,7 +182,7 @@ input {outline:none;}
     }
     function enter_key() 
             {
-                fun_key("百度",document.getElementById("textid").value);
+                Search_BaiDu();
             }
     window.onload=function()
     {
@@ -168,10 +210,10 @@ input {outline:none;}
     {
         if(window.event.keyCode==66&&event.altKey)
         {
-            fun_key("B站");
+            Search_Bilibili()
         }else if(window.event.keyCode==90&&event.altKey)
         {
-            fun_key("知乎");
+            Search_ZhiHu();
         }
         else if(window.event.keyCode==67&&event.altKey)
         {
@@ -179,13 +221,34 @@ input {outline:none;}
         }
         else if(window.event.keyCode==13)
         {
-            fun_key("百度");
-        }else if(window.event.keyCode==71&&event.altKey)
+            Search_BaiDu();
+        }else if(window.event.keyCode==71&&event.altKey)//g
         {
             Search_GitHub();
+        }else if(window.event.keyCode==83&&event.altKey)//s
+        {
+            Search_SouGou();
+        }else if(window.event.keyCode==87&&event.altKey)//w
+        {
+            Search_WXarticle();
+        }else if(window.event.keyCode==74&&event.altKey)//H候选词
+        {
+            input1_sw0();
         }
-
-        
+        else if(window.event.keyCode==75&&event.altKey)//K
+        {
+            input1_sw1();
+        }else if(window.event.keyCode==76&&event.altKey)//L
+        {
+            input1_sw2();
+        }else if(window.event.keyCode==186&&event.altKey)//L
+        {
+            input1_sw3();
+        }
+        else if(window.event.keyCode==222&&event.altKey)//L
+        {
+            input1_sw4();
+        }     
     }
 </script>
 
@@ -199,25 +262,116 @@ input {outline:none;}
     </script>
 <!--本地图片//G:/Pictures/海.jpg    网络图片HTTP开头--> 
     <div id="caidan">按方向键，有彩蛋</div>    
-    <div class="page_num">1</div>
-   
     <div class="content">
         <div class="div_input">
-            <input id="textid" type="text" class="input_default" onmouseout=mouseout() onmousedown=mousedo() onkeydown=inpt_keydown() >
+            <input id="textid" type="text" class="input_default" onmouseout=mouseout() onmousedown=mousedo() onkeydown=inpt_keydown()  onkeyup=BD_suKW()>
+        </div>
+        <div id="div_swid" style="display: none;width: 800px;margin: 0 auto;">
+            <ul class="ul_sw">
+                <li id="li0" class="li_sw" onmousedown=input1_sw0()></li>
+                <li id="li1" class="li_sw" onmousedown=input1_sw1()></li>
+                <li id="li2" class="li_sw" onmousedown=input1_sw2()></li>
+                <li id="li3" class="li_sw" onmousedown=input1_sw3()></li>
+                <li id="li4" class="li_sw" onmousedown=input1_sw4()></li>
+            </ul>
         </div>
         <div class="div_anniu">    
             <b>
-                    <input id="anniu1" type="button" value="百度" class="anniu_all" onclick=fun_key("百度") > &nbsp;
-                    <input id="anniu4" type="button" value="知乎" class="anniu_all" onclick=fun_key("知乎") >&nbsp;
-                    <input id="anniu5" type="button" value="B站" class="anniu_all" onclick=fun_key("B站") >&nbsp;
-                    <input id="anniu6" type="button" value="GitHub" class="anniu_all" onclick=Search_GitHub() > &nbsp;
-                    <input id="anniu2" type="button" value="Bing国际版" class="anniu_all" onclick=fun_key("bing")> &nbsp;
-                    <input id="anniu3" type="button" value="谷歌"  class="anniu_all" onclick=fun_key("谷歌") > &nbsp;
-        
+                    <input id="anniu1" type="button" value="百度" class="anniu_all" onclick=Search_BaiDu() > 
+                    <input id="anniu4" type="button" value="知乎" class="anniu_all" onclick=Search_ZhiHu() >
+                    <input id="anniu5" type="button" value="B站" class="anniu_all" onclick=Search_Bilibili()>
+                    <input id="anniu6" type="button" value="GitHub" class="anniu_all" onclick=Search_GitHub() >
+                    <input id="anniu2" type="button" value="Bing国际版" class="anniu_all" onclick=Search_Bing()>
+                    <input id="anniu3" type="button" value="谷歌"  class="anniu_all" onclick=Search_Google()>
+            </b><br>
+            <b>
+                <input type="button" value="搜狗" class="anniu_all" onclick=Search_SouGou() style="background-color: coral;"> 
+            </b> <br>
+            <b>
+                <input type="button" value="公众号文" class="anniu_all" onclick=Search_WXarticle() style="background-color: rgb(5, 143, 35);">
+                <input type="button" value="公众号" class="anniu_all" onclick=Search_WXacount() style="background-color: rgb(58, 139, 76);">
+            </b><br>
+            <b>
+                <input type="button" value="英->中" class="anniu_all" onclick=Search_GoogleT_Cn() style="background-color: #1A73EB;">
+                <input type="button" value="中->英" class="anniu_all" onclick=Search_GoogleT_En() style="background-color: #4e95f1;">
+                <input type="button" value="有道翻译" class="anniu_all" onclick=Search_YDtrans() style="background-color: #e02433;">
             </b>
         </div>
+        
+        
     </div>
    
 </body>
+
+<script type="text/javascript">//ajax -候选词
+    function BD_suKW()
+    {
+        var keyworld=document.getElementById("textid").value; 
+        if(keyworld=="")
+        { 
+            li_swClaer();
+        }
+        else{ 
+                //document.getElementById("script_9").remove();
+                var oScript = document.createElement('script');
+                oScript.id="script_9";
+                oScript.src = 'https://www.baidu.com/sugrec?ie=utf-8&json=1&prod=pc&wd='+keyworld+'&cb=Scri_RB';  //Scri_RB 回调函数
+                document.body.appendChild(oScript);
+                document.getElementById("script_9").remove();//删除新创建的脚本   
+            }
+    }
+    function Scri_RB(data) 
+    {//回调函数
+	    //console.log(data);
+        
+        var lis_kw=data.g;  
+        try {var len=lis_kw.length } catch (error) {return}
+        //console.log(lis_kw)   
+        if(len)
+        {
+            //console.log(lis_kw);
+            for (var i=0;i<5&&i<len;i++){document.getElementById("li"+i).innerHTML=lis_kw[i].q;}
+            document.getElementById("div_swid").style.display="block";
+        }else{
+            document.getElementById("div_swid").style.display="none";
+        }
+        //            
+    }
+    function input1_sw0()
+    {
+        document.getElementById("textid").value=document.getElementById("li0").innerHTML;
+        li_swClaer();
+        
+    }
+    function input1_sw1()
+    {
+        document.getElementById("textid").value=document.getElementById("li1").innerHTML;
+        li_swClaer();
+    }
+    function input1_sw2()
+    {
+        document.getElementById("textid").value=document.getElementById("li2").innerHTML;
+        li_swClaer();
+    }
+    function input1_sw3()
+    {
+        document.getElementById("textid").value=document.getElementById("li3").innerHTML;
+        li_swClaer();
+    }
+    function input1_sw4()
+    {
+        document.getElementById("textid").value=document.getElementById("li4").innerHTML;
+        li_swClaer();
+    }
+    function li_swClaer()
+    {
+        document.getElementById("div_swid").style.display="none";
+        document.getElementById("li0").innerHTML="";
+        document.getElementById("li1").innerHTML="";
+        document.getElementById("li2").innerHTML="";
+        document.getElementById("li3").innerHTML="";
+        document.getElementById("li4").innerHTML="";
+    }
+</script>
 
 </html>
